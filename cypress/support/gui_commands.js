@@ -14,3 +14,9 @@ Cypress.Commands.add('logout', ()=>{
     cy.get('[data-qa-selector="user_menu"]').click()
     cy.get('[data-qa-selector="sign_out_link"]').click()
 })
+
+Cypress.Commands.add('gui_createProject', (nameProject)=>{
+    cy.visit('/projects/new')
+    cy.get('#project_name').type(nameProject)
+    cy.get('#blank-project-pane > #new_project > .btn-success').click()
+})
